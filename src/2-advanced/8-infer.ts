@@ -7,5 +7,5 @@ function mustBeArray<T>(o: T): GetArrayType<T> {
 }
 
 const ret = mustBeArray("sdfdsf"); // never because its not an array
-const ret2 = mustBeArray(["foo", "bar"]); // string because
+const ret2 = mustBeArray(["foo", "bar"]); // string because we have inferred the type of the array
 

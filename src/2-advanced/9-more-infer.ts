@@ -1,8 +1,8 @@
-// Say we hvae a type like:
+// Say we have a type like:
 
 type AFunctionThatReturns<T> = (...args: any[]) => T;
 
-// This means this:
+// This means we can type a function such as:
 
 const someFunc: AFunctionThatReturns<number> = () => 123;
 
@@ -14,4 +14,4 @@ type FunctionReturnType<T> = T extends AFunctionThatReturns<infer R> ? R : any;
 
 // Cool now we can do this:
 
-type someFuncType = FunctionReturnType<typeof  someFunc>;
+type someFuncType = FunctionReturnType<typeof  someFunc>; // number

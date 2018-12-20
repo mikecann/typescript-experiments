@@ -15,4 +15,4 @@ interface Task {
   taskAddress: string;
 }
 
-type PartialTast = Pick<Task, "id" | "name" | "contacts">;
+type PickedTask = Pick<Task, "id" | "name" | "contacts">;

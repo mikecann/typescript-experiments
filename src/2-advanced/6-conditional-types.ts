@@ -4,6 +4,8 @@
  * Conditional types!
  */
 
+ // We have "logic" in the type system!
+
 type TypeName<T> =
     T extends string ? "string" :
     T extends number ? "number" :
@@ -12,8 +14,8 @@ type TypeName<T> =
     T extends Function ? "function" :
     "object";
 
-type T0 = TypeName<string>;  // "string"
-type T1 = TypeName<"a">;  // "string"
-type T2 = TypeName<true>;  // "boolean"
-type T3 = TypeName<() => void>;  // "function"
-type T4 = TypeName<string[]>;  // "object"
+type T0 = TypeName<string>; 
+type T1 = TypeName<"a">;  
+type T2 = TypeName<true>;  
+type T3 = TypeName<() => void>; 
+type T4 = TypeName<string[]>; 
