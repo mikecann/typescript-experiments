@@ -21,7 +21,7 @@ declare module "bravent" {
   };
 
   type EventFromDefinition<
-    TEventDefinitions extends EventDefinitions<object>,
+    TEventDefinitions extends EventDefinitions,
     T extends keyof TEventDefinitions
   > = 
     T extends keyof TEventDefinitions ? 
@@ -29,7 +29,7 @@ declare module "bravent" {
     : never;
 
   type EventsInDefinition<
-    TEventDefinitions extends EventDefinitions<object>
+    TEventDefinitions extends EventDefinitions
   > = EventFromDefinition<TEventDefinitions, keyof TEventDefinitions>;
 
   // ---- Commands ------ //
@@ -44,20 +44,20 @@ declare module "bravent" {
   };
 
   type CommandFromDefinition<
-    TCommandDefinitions extends CommandDefinitions<object>,
+    TCommandDefinitions extends CommandDefinitions,
     T extends keyof TCommandDefinitions
   > = T extends keyof TCommandDefinitions ? 
         T extends string ? Command<T, TCommandDefinitions[T]> : never
     : never;
 
-  type CommandsInDefinition<TCommandDefinitions extends CommandDefinitions<object>> 
+  type CommandsInDefinition<TCommandDefinitions extends CommandDefinitions> 
       = CommandFromDefinition<TCommandDefinitions, keyof TCommandDefinitions>;
 
   // ---- Handlers ------ //
 
   type EventHandlers<
     TState,
-    TEventDefinitions extends EventDefinitions<object>
+    TEventDefinitions extends EventDefinitions
   > = {
     [P in keyof TEventDefinitions]: (
       state: TState,
