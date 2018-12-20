@@ -1,0 +1,8 @@
+{
+  "name": "typescript-experiments",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mikecann/typescript-experiments.git",
+  "author": "Mike Cann <mike.cann@gmail.com>",
+  "license": "MIT"
+}
